@@ -1,14 +1,12 @@
-import jwt from "jsonwebtoken"
-import secretKey from "../configuration/jwtConfig.js"
+import jwt from "jsonwebtoken";
+import secretKey from "../configuration/jwtConfig.js";
 
-function generateToken(user){
-    const payload ={
-        id : user._id,
-        email : user.email,
-        name: user.name,
-        role : user.role || "student",
-    };
-    return jwt.sign(payload,secretKey,{expiresIn:"7d"})
-}
+export const generateAccessToken = (user) => {
+  return jwt.sign({ id: user._id, email: user.email }, secretKey, { expiresIn: "1d" });
+};
 
-export default generateToken;
+export const generateRefreshToken = (user) => {
+  return jwt.sign({ id: user._id }, secretKey, { expiresIn: "7d" });
+};
+
+export default generateAccessToken;
