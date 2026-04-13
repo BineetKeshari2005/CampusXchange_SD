@@ -1,8 +1,8 @@
 import express from "express";
-import auth from "../utils/authMiddleware.js";
-import Conversation from "../models/conversation.js";
-import Listing from "../models/listing.js";
-import Message from "../models/message.js";
+import auth from "../middleware/authenticate.js";
+import Conversation from "../models/Conversation.js";
+import Listing from "../models/Listing.js";
+import Message from "../models/Message.js";
 
 const router = express.Router();
 
