@@ -1,23 +1,26 @@
-## Live frontend Link:- 
-https://campus-x-change-gamma.vercel.app/auth/login
+## Live Frontend Link
 
-# CampusXchange - A Campus Marketplace for Students
+🔗 [campus-x-change-gamma.vercel.app](https://campus-x-change-gamma.vercel.app/auth/login)
 
-##  Project Proposal 
+---
 
-### 1. **Project Title**
+# CampusXchange — A Campus Marketplace for Students
+
+## Project Proposal
+
+### 1. Project Title
 
 **CampusXchange** – A Campus Marketplace for Students
 
 ---
 
-### 2. **Problem Statement**
+### 2. Problem Statement
 
 Many university students struggle to find affordable study materials, second-hand electronics, and other essential academic resources. Students who want to sell or exchange their used items lack a secure and campus-specific platform to reach interested buyers. Broader marketplaces like OLX or Facebook Marketplace allow external users, reduce trust, and are not built for campus needs. There is also no safe way for students to chat and complete payments inside a campus-only system.
 
 ---
 
-### 3. **Proposed Solution**
+### 3. Proposed Solution
 
 CampusXchange is a real-time, payment-enabled full-stack web platform designed exclusively for campus communities. Students can buy, sell, or exchange used books, electronics, and notes. The platform includes:
 
@@ -30,11 +33,9 @@ CampusXchange is a real-time, payment-enabled full-stack web platform designed e
 * Pagination for performance and smoother browsing
 * Wishlist and saved listings functionality
 
-
-
 ---
 
-### 4. **Objectives**
+### 4. Objectives
 
 * Allow students to create, read, update, and delete (CRUD) item listings.
 * Implement secure JWT authentication and protected APIs.
@@ -46,20 +47,22 @@ CampusXchange is a real-time, payment-enabled full-stack web platform designed e
 
 ---
 
-### 5. **Tech Stack**
+### 5. Tech Stack
 
-**Frontend:** Next.js, Tailwind CSS, Framer Motion
-**Backend:** Node.js, Express.js, Socket.io
-**Database:** MongoDB (Mongoose ORM)
-**Authentication:** JWT (JSON Web Tokens)
-** Payments:** Razorpay
-**Deployment:** Vercel (Frontend), Render (Backend), MongoDB Atlas (Database)
+| Layer | Technology |
+|---|---|
+| **Frontend** | Next.js, Tailwind CSS, Framer Motion |
+| **Backend** | Node.js, Express.js, Socket.IO |
+| **Database** | MongoDB (Mongoose ORM) |
+| **Authentication** | JWT (JSON Web Tokens) |
+| **Payments** | Razorpay |
+| **Deployment** | Vercel (Frontend), Render (Backend), MongoDB Atlas (Database) |
 
 ---
 
-### 6. **Roles & Responsibilities**
+### 6. Roles & Responsibilities
 
-#### **Student User**
+#### Student User
 
 * Register and manage profile
 * Create, update, and delete listings
@@ -70,7 +73,7 @@ CampusXchange is a real-time, payment-enabled full-stack web platform designed e
 
 ---
 
-### 7. **Expected Outcomes**
+### 7. Expected Outcomes
 
 * A fully functional real-time campus marketplace.
 * Secure payment flow with Razorpay verification.
@@ -79,13 +82,8 @@ CampusXchange is a real-time, payment-enabled full-stack web platform designed e
 * Campus-exclusive trusted environment.
 * Automated order and dashboard management.
 
-
 ---
 
-### 8. **Tools & Platforms**
+### 8. Tools & Platforms
 
 VS Code, GitHub, Postman, MongoDB Atlas, Vercel, Render, Figma (UI/UX Design)
-
----
-
-
