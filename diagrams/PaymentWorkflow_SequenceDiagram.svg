@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1500" height="2000" viewBox="0 0 1500 2000" xmlns="http://www.w3.org/2000/svg"
+     font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif">
+<defs>
+  <!-- Arrow markers -->
+  <marker id="solid-arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" fill="#94a3b8"/>
+  </marker>
+  <marker id="solid-arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" fill="#60a5fa"/>
+  </marker>
+  <marker id="solid-arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" fill="#34d399"/>
+  </marker>
+  <marker id="solid-arrow-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" fill="#fb923c"/>
+  </marker>
+  <marker id="solid-arrow-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" fill="#a78bfa"/>
+  </marker>
+  <marker id="solid-arrow-cyan" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" fill="#22d3ee"/>
+  </marker>
+  <marker id="dashed-arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" fill="#64748b"/>
+  </marker>
+  <marker id="dashed-arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" fill="#3b82f6"/>
+  </marker>
+  <marker id="dashed-arrow-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" fill="#fb923c"/>
+  </marker>
+  <filter id="shadow">
+    <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
+  </filter>
+  <filter id="glow-blue">
+    <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#3b82f6" flood-opacity="0.5"/>
+  </filter>
+  <filter id="glow-green">
+    <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#10b981" flood-opacity="0.5"/>
+  </filter>
+  <linearGradient id="bg-grad" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#050d1f"/>
+    <stop offset="100%" stop-color="#0a0f1e"/>
+  </linearGradient>
+</defs>
+
+<!-- Background -->
+<rect width="1500" height="2000" fill="url(#bg-grad)"/>
+<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#111827" stroke-width="0.5"/>
+</pattern>
+<rect width="1500" height="2000" fill="url(#grid)" opacity="0.6"/>
+
+
+<!-- Title -->
+<text x="750" y="36" text-anchor="middle" font-size="20" font-weight="700" fill="#f1f5f9" letter-spacing="0.5">Sequence Diagram – Complete Payment Workflow</text>
+<text x="750" y="56" text-anchor="middle" font-size="11" fill="#475569" letter-spacing="2">UML SEQUENCE DIAGRAM  •  STRATEGY PATTERN  •  OBSERVER PATTERN  •  CampusXchange</text>
+<line x1="60" y1="66" x2="1440" y2="66" stroke="#1e293b" stroke-width="1"/>
+
+
+<g filter="url(#shadow)">
+  <rect x="100" y="76" width="130" height="54" rx="8" fill="#1e40af" stroke="#3b82f6" stroke-width="1.5"/>
+  <rect x="100" y="76" width="130" height="22" rx="8" fill="#1d4ed8"/>
+  <rect x="100" y="90" width="130" height="8" fill="#1d4ed8"/>
+  <text x="165" y="91" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">Buyer</text>
+  <text x="165" y="114" text-anchor="middle" font-size="9.5" fill="#dbeafe">(User)</text>
+</g>
+
+<g filter="url(#shadow)">
+  <rect x="315" y="76" width="130" height="54" rx="8" fill="#065f46" stroke="#10b981" stroke-width="1.5"/>
+  <rect x="315" y="76" width="130" height="22" rx="8" fill="#047857"/>
+  <rect x="315" y="90" width="130" height="8" fill="#047857"/>
+  <text x="380" y="91" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">Controller</text>
+  <text x="380" y="114" text-anchor="middle" font-size="9.5" fill="#d1fae5">(Backend API)</text>
+</g>
+
+<g filter="url(#shadow)">
+  <rect x="535" y="76" width="130" height="54" rx="8" fill="#7c2d12" stroke="#f97316" stroke-width="1.5"/>
+  <rect x="535" y="76" width="130" height="22" rx="8" fill="#9a3412"/>
+  <rect x="535" y="90" width="130" height="8" fill="#9a3412"/>
+  <text x="600" y="91" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">PaymentService</text>
+  <text x="600" y="114" text-anchor="middle" font-size="9.5" fill="#ffedd5">(Business Logic)</text>
+</g>
+
+<g filter="url(#shadow)">
+  <rect x="775" y="76" width="130" height="54" rx="8" fill="#4c1d95" stroke="#a78bfa" stroke-width="1.5"/>
+  <rect x="775" y="76" width="130" height="22" rx="8" fill="#5b21b6"/>
+  <rect x="775" y="90" width="130" height="8" fill="#5b21b6"/>
+  <text x="840" y="91" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">Razorpay API</text>
+  <text x="840" y="114" text-anchor="middle" font-size="9.5" fill="#ede9fe">(External Gateway)</text>
+</g>
+
+<g filter="url(#shadow)">
+  <rect x="995" y="76" width="130" height="54" rx="8" fill="#164e63" stroke="#22d3ee" stroke-width="1.5"/>
+  <rect x="995" y="76" width="130" height="22" rx="8" fill="#155e75"/>
+  <rect x="995" y="90" width="130" height="8" fill="#155e75"/>
+  <text x="1060" y="91" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">OrderEvent</text>
+  <text x="1060" y="114" text-anchor="middle" font-size="9.5" fill="#cffafe">Emitter</text>
+</g>
+
+<g filter="url(#shadow)">
+  <rect x="1215" y="76" width="130" height="54" rx="8" fill="#4a1d96" stroke="#c084fc" stroke-width="1.5"/>
+  <rect x="1215" y="76" width="130" height="22" rx="8" fill="#581c87"/>
+  <rect x="1215" y="90" width="130" height="8" fill="#581c87"/>
+  <text x="1280" y="91" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">Notification</text>
+  <text x="1280" y="114" text-anchor="middle" font-size="9.5" fill="#f3e8ff">Repository</text>
+</g>
+
+<!-- External system boundary for Razorpay -->
+<rect x="735" y="68" width="210" height="1860" rx="6"
+      fill="none" stroke="#6d28d9" stroke-width="1.5" stroke-dasharray="8,4" opacity="0.5"/>
+<text x="840" y="64" text-anchor="middle" font-size="9" fill="#a78bfa" font-style="italic">«external system»</text>
+
+<line x1="165" y1="120" x2="165" y2="1920"
+  stroke="#3b82f6" stroke-width="1" stroke-dasharray="6,4" opacity="0.35"/>
+<line x1="380" y1="120" x2="380" y2="1920"
+  stroke="#10b981" stroke-width="1" stroke-dasharray="6,4" opacity="0.35"/>
+<line x1="600" y1="120" x2="600" y2="1920"
+  stroke="#f97316" stroke-width="1" stroke-dasharray="6,4" opacity="0.35"/>
+<line x1="840" y1="120" x2="840" y2="1920"
+  stroke="#a78bfa" stroke-width="1" stroke-dasharray="6,4" opacity="0.35"/>
+<line x1="1060" y1="120" x2="1060" y2="1920"
+  stroke="#22d3ee" stroke-width="1" stroke-dasharray="6,4" opacity="0.35"/>
+<line x1="1280" y1="120" x2="1280" y2="1920"
+  stroke="#c084fc" stroke-width="1" stroke-dasharray="6,4" opacity="0.35"/>
+
+<rect x="60" y="143" width="1380" height="20" rx="4" fill="#1e3a8a" opacity="0.35"/>
+<text x="750" y="157" text-anchor="middle" font-size="10" font-weight="600" fill="#94a3b8" letter-spacing="2">— SECTION 1: INITIATE PURCHASE —</text>
+<rect x="158" y="190" width="14" height="340" rx="3" fill="#3b82f6" opacity="0.85" stroke="#3b82f6" stroke-width="0.5"/>
+<rect x="373" y="215" width="14" height="290" rx="3" fill="#10b981" opacity="0.85" stroke="#10b981" stroke-width="0.5"/>
+<line x1="165" y1="205" x2="370" y2="205" stroke="#60a5fa" stroke-width="1.8"  marker-end="url(#solid-arrow-blue)"/>
+<text x="272" y="197" text-anchor="middle" font-size="10.5" font-weight="700" fill="#60a5fa">(1) POST /api/payments/pay/:id</text>
+<circle cx="165" cy="205" r="4" fill="#3b82f6" stroke="#0f172a" stroke-width="1.5"/>
+<rect x="593" y="245" width="14" height="260" rx="3" fill="#f97316" opacity="0.85" stroke="#f97316" stroke-width="0.5"/>
+<line x1="380" y1="255" x2="590" y2="255" stroke="#34d399" stroke-width="1.8"  marker-end="url(#solid-arrow-green)"/>
+<text x="490" y="247" text-anchor="middle" font-size="10.5" font-weight="700" fill="#34d399">(2) createPaymentOrder(listingId)</text>
+<circle cx="380" cy="255" r="4" fill="#10b981" stroke="#0f172a" stroke-width="1.5"/>
+<rect x="491.0" y="285" width="219.0" height="46" rx="5" fill="#1c1917" stroke="#f97316" stroke-width="1.2"/>
+<text x="600" y="299" text-anchor="middle" font-size="9.5" fill="#fed7aa">«Strategy Pattern»</text>
+<text x="600" y="315" text-anchor="middle" font-size="9.5" fill="#fed7aa">RazorpayStrategy.createOrder()</text>
+<rect x="833" y="345" width="14" height="150" rx="3" fill="#a78bfa" opacity="0.85" stroke="#a78bfa" stroke-width="0.5"/>
+<line x1="600" y1="355" x2="830" y2="355" stroke="#fb923c" stroke-width="1.8"  marker-end="url(#solid-arrow-orange)"/>
+<text x="720" y="347" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fb923c">(3) orders.create(amount, currency)</text>
+<text x="720" y="334" text-anchor="middle" font-size="9" fill="#64748b" font-style="italic">Razorpay SDK call</text>
+<circle cx="600" cy="355" r="4" fill="#f97316" stroke="#0f172a" stroke-width="1.5"/>
+<line x1="840" y1="405" x2="610" y2="405" stroke="#a78bfa" stroke-width="1.8" stroke-dasharray="7,4" marker-end="url(#dashed-arrow)"/>
+<text x="720" y="397" text-anchor="middle" font-size="10.5" font-weight="600" fill="#a78bfa">{ orderId, amount, currency }</text>
+<text x="720" y="384" text-anchor="middle" font-size="9" fill="#64748b" font-style="italic">Razorpay response</text>
+<circle cx="840" cy="405" r="4" fill="#a78bfa" stroke="#0f172a" stroke-width="1.5"/>
+<line x1="600" y1="460" x2="390" y2="460" stroke="#fb923c" stroke-width="1.8" stroke-dasharray="7,4" marker-end="url(#dashed-arrow)"/>
+<text x="490" y="452" text-anchor="middle" font-size="10.5" font-weight="600" fill="#fb923c">return { razorpayOrderId, amount }</text>
+<line x1="380" y1="500" x2="175" y2="500" stroke="#64748b" stroke-width="1.8" stroke-dasharray="7,4" marker-end="url(#dashed-arrow)"/>
+<text x="272" y="492" text-anchor="middle" font-size="10.5" font-weight="700" fill="#64748b">(4) Razorpay Order returned to frontend</text>
+<circle cx="380" cy="500" r="4" fill="#10b981" stroke="#0f172a" stroke-width="1.5"/>
+
+<rect x="60" y="543" width="1380" height="20" rx="4" fill="#4c1d95" opacity="0.35"/>
+<text x="750" y="557" text-anchor="middle" font-size="10" font-weight="600" fill="#94a3b8" letter-spacing="2">— SECTION 2: BUYER COMPLETES PAYMENT (RAZORPAY UI) —</text>
+<rect x="158" y="583" width="14" height="52" rx="3" fill="#3b82f6" opacity="0.85" stroke="#3b82f6" stroke-width="0.5"/>
+<rect x="85.0" y="593" width="160.5" height="62" rx="5" fill="#0f172a" stroke="#3b82f6" stroke-width="1.2"/>
+<text x="165" y="607" text-anchor="middle" font-size="9.5" fill="#93c5fd">«Client Side»</text>
+<text x="165" y="623" text-anchor="middle" font-size="9.5" fill="#93c5fd">Razorpay popup shown</text>
+<text x="165" y="639" text-anchor="middle" font-size="9.5" fill="#93c5fd">Buyer enters card/UPI</text>
+
+<rect x="60" y="673" width="1380" height="20" rx="4" fill="#7c2d12" opacity="0.35"/>
+<text x="750" y="687" text-anchor="middle" font-size="10" font-weight="600" fill="#94a3b8" letter-spacing="2">— SECTION 3: PAYMENT VERIFICATION —</text>
+<rect x="158" y="713" width="14" height="22" rx="3" fill="#3b82f6" opacity="0.85" stroke="#3b82f6" stroke-width="0.5"/>
+<rect x="373" y="735" width="14" height="240" rx="3" fill="#10b981" opacity="0.85" stroke="#10b981" stroke-width="0.5"/>
+<line x1="165" y1="723" x2="370" y2="723" stroke="#60a5fa" stroke-width="1.8"  marker-end="url(#solid-arrow-blue)"/>
+<text x="272" y="715" text-anchor="middle" font-size="10.5" font-weight="700" fill="#60a5fa">(5) POST /api/payments/verify</text>
+<text x="272" y="702" text-anchor="middle" font-size="9" fill="#64748b" font-style="italic">paymentId, orderId, signature</text>
+<circle cx="165" cy="723" r="4" fill="#3b82f6" stroke="#0f172a" stroke-width="1.5"/>
+<rect x="593" y="765" width="14" height="240" rx="3" fill="#f97316" opacity="0.85" stroke="#f97316" stroke-width="0.5"/>
+<line x1="380" y1="775" x2="590" y2="775" stroke="#34d399" stroke-width="1.8"  marker-end="url(#solid-arrow-green)"/>
+<text x="490" y="767" text-anchor="middle" font-size="10.5" font-weight="700" fill="#34d399">(6) verifyAndComplete(paymentData)</text>
+<circle cx="380" cy="775" r="4" fill="#10b981" stroke="#0f172a" stroke-width="1.5"/>
+<rect x="465.0" y="800" width="271.0" height="62" rx="5" fill="#1a0a00" stroke="#f97316" stroke-width="1.2"/>
+<text x="600" y="814" text-anchor="middle" font-size="9.5" fill="#fed7aa">«HMAC Signature Validation»</text>
+<text x="600" y="830" text-anchor="middle" font-size="9.5" fill="#fed7aa">Secure payment verification using HMAC</text>
+<text x="600" y="846" text-anchor="middle" font-size="9.5" fill="#fed7aa">crypto.createHmac(sha256, keySecret)</text>
+<rect x="833" y="885" width="14" height="50" rx="3" fill="#a78bfa" opacity="0.85" stroke="#a78bfa" stroke-width="0.5"/>
+<line x1="600" y1="895" x2="830" y2="895" stroke="#fb923c" stroke-width="1.8"  marker-end="url(#solid-arrow-orange)"/>
+<text x="720" y="887" text-anchor="middle" font-size="10.5" font-weight="600" fill="#fb923c">verifyPayment(sig, orderId)</text>
+<text x="720" y="874" text-anchor="middle" font-size="9" fill="#64748b" font-style="italic">HMAC verify</text>
+<circle cx="600" cy="895" r="4" fill="#f97316" stroke="#0f172a" stroke-width="1.5"/>
+<line x1="840" y1="930" x2="610" y2="930" stroke="#a78bfa" stroke-width="1.8" stroke-dasharray="7,4" marker-end="url(#dashed-arrow)"/>
+<text x="720" y="922" text-anchor="middle" font-size="10.5" font-weight="600" fill="#a78bfa">{ valid: true }</text>
+<circle cx="840" cy="930" r="4" fill="#a78bfa" stroke="#0f172a" stroke-width="1.5"/>
+<rect x="475.0" y="960" width="251.5" height="62" rx="5" fill="#0a1628" stroke="#10b981" stroke-width="1.2"/>
+<text x="600" y="974" text-anchor="middle" font-size="9.5" fill="#6ee7b7">order.status = "paid"</text>
+<text x="600" y="990" text-anchor="middle" font-size="9.5" fill="#6ee7b7">listing.status = "sold"</text>
+<text x="600" y="1006" text-anchor="middle" font-size="9.5" fill="#6ee7b7">transferToSeller(accountId, amount)</text>
+
+<rect x="60" y="1043" width="1380" height="20" rx="4" fill="#064e3b" opacity="0.35"/>
+<text x="750" y="1057" text-anchor="middle" font-size="10" font-weight="600" fill="#94a3b8" letter-spacing="2">— SECTION 4: OBSERVER PATTERN — EVENT EMISSION &amp; NOTIFICATIONS —</text>
+<rect x="1053" y="1083" width="14" height="172" rx="3" fill="#22d3ee" opacity="0.85" stroke="#22d3ee" stroke-width="0.5"/>
+<line x1="600" y1="1093" x2="1050" y2="1093" stroke="#22d3ee" stroke-width="1.8"  marker-end="url(#solid-arrow-cyan)"/>
+<text x="830" y="1085" text-anchor="middle" font-size="10.5" font-weight="700" fill="#22d3ee">(7) emit('order:paid', data)</text>
+<text x="830" y="1072" text-anchor="middle" font-size="9" fill="#64748b" font-style="italic">«Observer Pattern»</text>
+<circle cx="600" cy="1093" r="4" fill="#f97316" stroke="#0f172a" stroke-width="1.5"/>
+<rect x="980.0" y="1115" width="160.5" height="62" rx="5" fill="#00131a" stroke="#22d3ee" stroke-width="1.2"/>
+<text x="1060" y="1129" text-anchor="middle" font-size="9.5" fill="#a5f3fc">«Observer Pattern»</text>
+<text x="1060" y="1145" text-anchor="middle" font-size="9.5" fill="#a5f3fc">Event bus triggers</text>
+<text x="1060" y="1161" text-anchor="middle" font-size="9.5" fill="#a5f3fc">notification handlers</text>
+<rect x="1273" y="1175" width="14" height="65" rx="3" fill="#c084fc" opacity="0.85" stroke="#c084fc" stroke-width="0.5"/>
+<line x1="1060" y1="1185" x2="1270" y2="1185" stroke="#c084fc" stroke-width="1.8"  marker-end="url(#solid-arrow-purple)"/>
+<text x="1170" y="1177" text-anchor="middle" font-size="10.5" font-weight="700" fill="#c084fc">(8) NotifFactory.create('order')</text>
+<circle cx="1060" cy="1185" r="4" fill="#22d3ee" stroke="#0f172a" stroke-width="1.5"/>
+<line x1="1060" y1="1220" x2="1270" y2="1220" stroke="#c084fc" stroke-width="1.8"  marker-end="url(#solid-arrow-purple)"/>
+<text x="1170" y="1212" text-anchor="middle" font-size="10.5" font-weight="600" fill="#c084fc">NotifFactory.create('listing')</text>
+<rect x="1210.0" y="1195" width="141.0" height="46" rx="5" fill="#1a0a2e" stroke="#c084fc" stroke-width="1.2"/>
+<text x="1280" y="1209" text-anchor="middle" font-size="9.5" fill="#e9d5ff">Save to DB</text>
+<text x="1280" y="1225" text-anchor="middle" font-size="9.5" fill="#e9d5ff">(NotifRepo.create)</text>
+
+<rect x="60" y="1283" width="1380" height="20" rx="4" fill="#1e3a8a" opacity="0.35"/>
+<text x="750" y="1297" text-anchor="middle" font-size="10" font-weight="600" fill="#94a3b8" letter-spacing="2">— SECTION 5: FINAL RESPONSE —</text>
+<rect x="373" y="1323" width="14" height="42" rx="3" fill="#10b981" opacity="0.85" stroke="#10b981" stroke-width="0.5"/>
+<line x1="600" y1="1333" x2="390" y2="1333" stroke="#34d399" stroke-width="1.8" stroke-dasharray="7,4" marker-end="url(#dashed-arrow)"/>
+<text x="490" y="1325" text-anchor="middle" font-size="10.5" font-weight="700" fill="#34d399">(9) { success: true, orderId }</text>
+<circle cx="600" cy="1333" r="4" fill="#f97316" stroke="#0f172a" stroke-width="1.5"/>
+<line x1="380" y1="1363" x2="175" y2="1363" stroke="#60a5fa" stroke-width="1.8" stroke-dasharray="7,4" marker-end="url(#dashed-arrow)"/>
+<text x="272" y="1355" text-anchor="middle" font-size="10.5" font-weight="600" fill="#60a5fa">200 OK — { success: true }</text>
+<circle cx="380" cy="1363" r="4" fill="#10b981" stroke="#0f172a" stroke-width="1.5"/>
+
+<rect x="85" y="1385" width="160" height="32" rx="16" fill="#065f46" stroke="#10b981" stroke-width="1.5" filter="url(#glow-green)"/>
+<text x="165" y="1406" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">✓ Payment Confirmed</text>
+
+
+<g filter="url(#shadow)">
+  <rect x="100" y="1924" width="130" height="54" rx="8" fill="#1e40af" stroke="#3b82f6" stroke-width="1.5"/>
+  <rect x="100" y="1924" width="130" height="22" rx="8" fill="#1d4ed8"/>
+  <rect x="100" y="1938" width="130" height="8" fill="#1d4ed8"/>
+  <text x="165" y="1939" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">Buyer</text>
+  <text x="165" y="1962" text-anchor="middle" font-size="9.5" fill="#dbeafe">(User)</text>
+</g>
+
+<g filter="url(#shadow)">
+  <rect x="315" y="1924" width="130" height="54" rx="8" fill="#065f46" stroke="#10b981" stroke-width="1.5"/>
+  <rect x="315" y="1924" width="130" height="22" rx="8" fill="#047857"/>
+  <rect x="315" y="1938" width="130" height="8" fill="#047857"/>
+  <text x="380" y="1939" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">Controller</text>
+  <text x="380" y="1962" text-anchor="middle" font-size="9.5" fill="#d1fae5">(Backend API)</text>
+</g>
+
+<g filter="url(#shadow)">
+  <rect x="535" y="1924" width="130" height="54" rx="8" fill="#7c2d12" stroke="#f97316" stroke-width="1.5"/>
+  <rect x="535" y="1924" width="130" height="22" rx="8" fill="#9a3412"/>
+  <rect x="535" y="1938" width="130" height="8" fill="#9a3412"/>
+  <text x="600" y="1939" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">PaymentService</text>
+  <text x="600" y="1962" text-anchor="middle" font-size="9.5" fill="#ffedd5">(Business Logic)</text>
+</g>
+
+<g filter="url(#shadow)">
+  <rect x="775" y="1924" width="130" height="54" rx="8" fill="#4c1d95" stroke="#a78bfa" stroke-width="1.5"/>
+  <rect x="775" y="1924" width="130" height="22" rx="8" fill="#5b21b6"/>
+  <rect x="775" y="1938" width="130" height="8" fill="#5b21b6"/>
+  <text x="840" y="1939" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">Razorpay API</text>
+  <text x="840" y="1962" text-anchor="middle" font-size="9.5" fill="#ede9fe">(External Gateway)</text>
+</g>
+
+<g filter="url(#shadow)">
+  <rect x="995" y="1924" width="130" height="54" rx="8" fill="#164e63" stroke="#22d3ee" stroke-width="1.5"/>
+  <rect x="995" y="1924" width="130" height="22" rx="8" fill="#155e75"/>
+  <rect x="995" y="1938" width="130" height="8" fill="#155e75"/>
+  <text x="1060" y="1939" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">OrderEvent</text>
+  <text x="1060" y="1962" text-anchor="middle" font-size="9.5" fill="#cffafe">Emitter</text>
+</g>
+
+<g filter="url(#shadow)">
+  <rect x="1215" y="1924" width="130" height="54" rx="8" fill="#4a1d96" stroke="#c084fc" stroke-width="1.5"/>
+  <rect x="1215" y="1924" width="130" height="22" rx="8" fill="#581c87"/>
+  <rect x="1215" y="1938" width="130" height="8" fill="#581c87"/>
+  <text x="1280" y="1939" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">Notification</text>
+  <text x="1280" y="1962" text-anchor="middle" font-size="9.5" fill="#f3e8ff">Repository</text>
+</g>
+
+<rect x="60" y="1940" width="520" height="50" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1.2"/>
+<text x="72" y="1958" font-size="10" font-weight="600" fill="#94a3b8">Legend:</text>
+<line x1="125" y1="1954" x2="175" y2="1954" stroke="#60a5fa" stroke-width="1.8" marker-end="url(#solid-arrow-blue)"/>
+<text x="180" y="1958" font-size="9.5" fill="#cbd5e1">Request (solid)</text>
+<line x1="275" y1="1954" x2="325" y2="1954" stroke="#64748b" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#dashed-arrow)"/>
+<text x="330" y="1958" font-size="9.5" fill="#cbd5e1">Response (dashed)</text>
+<rect x="125" y="1968" width="30" height="10" rx="2" fill="#1e40af" opacity="0.85"/>
+<text x="160" y="1978" font-size="9.5" fill="#cbd5e1">Activation bar</text>
+<rect x="245" y="1968" width="20" height="10" rx="2" fill="#4c1d95" stroke="#6d28d9" stroke-dasharray="3,2"/>
+<text x="270" y="1978" font-size="9.5" fill="#a78bfa">External system</text>
+<text x="385" y="1978" font-size="9.5" fill="#fb923c">«Strategy Pattern» (Payment)</text>
+<text x="385" y="1958" font-size="9.5" fill="#22d3ee">«Observer Pattern» (Events)</text>
+
+</svg>
