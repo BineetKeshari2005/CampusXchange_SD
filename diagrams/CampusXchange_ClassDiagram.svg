@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1400" height="2100" viewBox="0 0 1400 2100" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <!-- Arrow markers -->
+    <marker id="inherit-arrow" markerWidth="12" markerHeight="10" refX="10" refY="5" orient="auto">
+      <polygon points="0 0, 10 5, 0 10" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+    </marker>
+    <marker id="depend-arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 9 4, 0 8" fill="#64748b" stroke="#64748b"/>
+    </marker>
+    <marker id="pattern-arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 9 4, 0 8" fill="#f59e0b" stroke="#f59e0b"/>
+    </marker>
+    <marker id="inherit-hollow" markerWidth="14" markerHeight="12" refX="12" refY="6" orient="auto">
+      <polygon points="0 0, 12 6, 0 12" fill="#1e293b" stroke="#94a3b8" stroke-width="1.5"/>
+    </marker>
+    <!-- Filters -->
+    <filter id="shadow" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+    <filter id="subtle-shadow" x="-3%" y="-3%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.2"/>
+    </filter>
+    <!-- Gradients -->
+    <linearGradient id="bg-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="purple-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#6d28d9"/>
+    </linearGradient>
+    <linearGradient id="green-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+    <linearGradient id="orange-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+    <linearGradient id="blue-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="red-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#dc2626"/>
+      <stop offset="100%" stop-color="#b91c1c"/>
+    </linearGradient>
+    <linearGradient id="header-purple" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5b21b6"/>
+      <stop offset="100%" stop-color="#4c1d95"/>
+    </linearGradient>
+    <linearGradient id="header-green" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#065f46"/>
+      <stop offset="100%" stop-color="#064e3b"/>
+    </linearGradient>
+    <linearGradient id="ctrl-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="2100" fill="url(#bg-grad)"/>
+  
+  <!-- Subtle grid pattern -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.5"/>
+  </pattern>
+  <rect width="1400" height="2100" fill="url(#grid)" opacity="0.4"/>
+
+  <!-- ===== TITLE ===== -->
+  <text x="700" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#f1f5f9" letter-spacing="1">Class Diagram – CampusXchange System Architecture</text>
+  <text x="700" y="62" text-anchor="middle" font-size="12" fill="#64748b" letter-spacing="2">UML CLASS DIAGRAM  •  DESIGN PATTERNS  •  LAYERED ARCHITECTURE</text>
+  <line x1="100" y1="74" x2="1300" y2="74" stroke="#334155" stroke-width="1"/>
+
+  <!-- ============================================================ -->
+  <!-- LAYER 1: REPOSITORY LAYER -->
+  <!-- ============================================================ -->
+  
+  <!-- Layer label -->
+  <rect x="80" y="88" width="1240" height="28" rx="4" fill="#1e1b4b" opacity="0.6"/>
+  <text x="700" y="107" text-anchor="middle" font-size="11" font-weight="600" fill="#a78bfa" letter-spacing="3">REPOSITORY LAYER — Inheritance from BaseRepository</text>
+
+  <!-- BaseRepository (abstract) -->
+  <g filter="url(#shadow)" transform="translate(540, 128)">
+    <rect width="220" height="72" rx="8" fill="url(#purple-grad)" stroke="#a78bfa" stroke-width="1.5"/>
+    <rect width="220" height="26" rx="8" fill="url(#header-purple)"/>
+    <rect width="220" height="10" y="16" fill="url(#header-purple)"/>
+    <text x="110" y="11" text-anchor="middle" font-size="9" fill="#c4b5fd" font-style="italic">«abstract»</text>
+    <text x="110" y="24" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">BaseRepository</text>
+    <line x1="8" y1="28" x2="212" y2="28" stroke="#a78bfa" stroke-width="0.8" opacity="0.6"/>
+    <text x="110" y="44" text-anchor="middle" font-size="10" fill="#ddd6fe">findById · create</text>
+    <text x="110" y="58" text-anchor="middle" font-size="10" fill="#ddd6fe">update · delete</text>
+  </g>
+
+  <!-- Child repositories -->
+  <!-- UserRepository -->
+  <g filter="url(#subtle-shadow)" transform="translate(90, 248)">
+    <rect width="175" height="56" rx="7" fill="#4c1d95" stroke="#7c3aed" stroke-width="1.2"/>
+    <rect width="175" height="24" rx="7" fill="#3b0764"/>
+    <rect width="175" height="8" y="16" fill="#3b0764"/>
+    <text x="87" y="18" text-anchor="middle" font-size="12" font-weight="600" fill="#e9d5ff">UserRepository</text>
+    <line x1="8" y1="24" x2="167" y2="24" stroke="#7c3aed" stroke-width="0.7" opacity="0.5"/>
+    <text x="87" y="38" text-anchor="middle" font-size="9.5" fill="#c4b5fd">findById · create</text>
+    <text x="87" y="51" text-anchor="middle" font-size="9.5" fill="#c4b5fd">update · delete</text>
+  </g>
+  <!-- ListingRepository -->
+  <g filter="url(#subtle-shadow)" transform="translate(310, 248)">
+    <rect width="185" height="56" rx="7" fill="#4c1d95" stroke="#7c3aed" stroke-width="1.2"/>
+    <rect width="185" height="24" rx="7" fill="#3b0764"/>
+    <rect width="185" height="8" y="16" fill="#3b0764"/>
+    <text x="92" y="18" text-anchor="middle" font-size="12" font-weight="600" fill="#e9d5ff">ListingRepository</text>
+    <line x1="8" y1="24" x2="177" y2="24" stroke="#7c3aed" stroke-width="0.7" opacity="0.5"/>
+    <text x="92" y="38" text-anchor="middle" font-size="9.5" fill="#c4b5fd">findById · create</text>
+    <text x="92" y="51" text-anchor="middle" font-size="9.5" fill="#c4b5fd">update · delete</text>
+  </g>
+  <!-- OrderRepository -->
+  <g filter="url(#subtle-shadow)" transform="translate(540, 248)">
+    <rect width="180" height="56" rx="7" fill="#4c1d95" stroke="#7c3aed" stroke-width="1.2"/>
+    <rect width="180" height="24" rx="7" fill="#3b0764"/>
+    <rect width="180" height="8" y="16" fill="#3b0764"/>
+    <text x="90" y="18" text-anchor="middle" font-size="12" font-weight="600" fill="#e9d5ff">OrderRepository</text>
+    <line x1="8" y1="24" x2="172" y2="24" stroke="#7c3aed" stroke-width="0.7" opacity="0.5"/>
+    <text x="90" y="38" text-anchor="middle" font-size="9.5" fill="#c4b5fd">findById · create</text>
+    <text x="90" y="51" text-anchor="middle" font-size="9.5" fill="#c4b5fd">update · delete</text>
+  </g>
+  <!-- NotificationRepository -->
+  <g filter="url(#subtle-shadow)" transform="translate(768, 248)">
+    <rect width="210" height="56" rx="7" fill="#4c1d95" stroke="#7c3aed" stroke-width="1.2"/>
+    <rect width="210" height="24" rx="7" fill="#3b0764"/>
+    <rect width="210" height="8" y="16" fill="#3b0764"/>
+    <text x="105" y="18" text-anchor="middle" font-size="12" font-weight="600" fill="#e9d5ff">NotificationRepository</text>
+    <line x1="8" y1="24" x2="202" y2="24" stroke="#7c3aed" stroke-width="0.7" opacity="0.5"/>
+    <text x="105" y="38" text-anchor="middle" font-size="9.5" fill="#c4b5fd">findById · create</text>
+    <text x="105" y="51" text-anchor="middle" font-size="9.5" fill="#c4b5fd">update · delete</text>
+  </g>
+
+  <!-- Inheritance arrows: child repos → BaseRepository -->
+  <!-- UserRepository to BaseRepository -->
+  <line x1="177" y1="248" x2="590" y2="200" stroke="#a78bfa" stroke-width="1.5" marker-end="url(#inherit-hollow)"/>
+  <!-- ListingRepository to BaseRepository -->
+  <line x1="402" y1="248" x2="620" y2="200" stroke="#a78bfa" stroke-width="1.5" marker-end="url(#inherit-hollow)"/>
+  <!-- OrderRepository to BaseRepository -->
+  <line x1="630" y1="248" x2="660" y2="200" stroke="#a78bfa" stroke-width="1.5" marker-end="url(#inherit-hollow)"/>
+  <!-- NotificationRepository to BaseRepository -->
+  <line x1="873" y1="248" x2="720" y2="200" stroke="#a78bfa" stroke-width="1.5" marker-end="url(#inherit-hollow)"/>
+
+  <!-- ============================================================ -->
+  <!-- LAYER 2: SERVICE LAYER -->
+  <!-- ============================================================ -->
+  
+  <rect x="80" y="328" width="1240" height="28" rx="4" fill="#064e3b" opacity="0.5"/>
+  <text x="700" y="347" text-anchor="middle" font-size="11" font-weight="600" fill="#6ee7b7" letter-spacing="3">SERVICE LAYER — Business Logic</text>
+
+  <!-- AuthService -->
+  <g filter="url(#shadow)" transform="translate(90, 368)">
+    <rect width="175" height="68" rx="8" fill="url(#green-grad)" stroke="#34d399" stroke-width="1.3"/>
+    <rect width="175" height="26" rx="8" fill="url(#header-green)"/>
+    <rect width="175" height="10" y="16" fill="url(#header-green)"/>
+    <text x="87" y="20" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">AuthService</text>
+    <line x1="8" y1="26" x2="167" y2="26" stroke="#34d399" stroke-width="0.7" opacity="0.6"/>
+    <text x="87" y="42" text-anchor="middle" font-size="10" fill="#d1fae5">+ register()</text>
+    <text x="87" y="56" text-anchor="middle" font-size="10" fill="#d1fae5">+ login()</text>
+  </g>
+  <!-- ListingService -->
+  <g filter="url(#shadow)" transform="translate(313, 368)">
+    <rect width="185" height="68" rx="8" fill="url(#green-grad)" stroke="#34d399" stroke-width="1.3"/>
+    <rect width="185" height="26" rx="8" fill="url(#header-green)"/>
+    <rect width="185" height="10" y="16" fill="url(#header-green)"/>
+    <text x="92" y="20" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">ListingService</text>
+    <line x1="8" y1="26" x2="177" y2="26" stroke="#34d399" stroke-width="0.7" opacity="0.6"/>
+    <text x="92" y="42" text-anchor="middle" font-size="10" fill="#d1fae5">+ create()  + get()</text>
+    <text x="92" y="56" text-anchor="middle" font-size="10" fill="#d1fae5">+ update()</text>
+  </g>
+  <!-- PaymentService -->
+  <g filter="url(#shadow)" transform="translate(548, 368)">
+    <rect width="195" height="68" rx="8" fill="url(#green-grad)" stroke="#34d399" stroke-width="1.3"/>
+    <rect width="195" height="26" rx="8" fill="url(#header-green)"/>
+    <rect width="195" height="10" y="16" fill="url(#header-green)"/>
+    <text x="97" y="20" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">PaymentService</text>
+    <line x1="8" y1="26" x2="187" y2="26" stroke="#34d399" stroke-width="0.7" opacity="0.6"/>
+    <text x="97" y="42" text-anchor="middle" font-size="10" fill="#d1fae5">+ createOrder()</text>
+    <text x="97" y="56" text-anchor="middle" font-size="10" fill="#d1fae5">+ verify()</text>
+  </g>
+  <!-- ProfileService -->
+  <g filter="url(#shadow)" transform="translate(793, 368)">
+    <rect width="185" height="68" rx="8" fill="url(#green-grad)" stroke="#34d399" stroke-width="1.3"/>
+    <rect width="185" height="26" rx="8" fill="url(#header-green)"/>
+    <rect width="185" height="10" y="16" fill="url(#header-green)"/>
+    <text x="92" y="20" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">ProfileService</text>
+    <line x1="8" y1="26" x2="177" y2="26" stroke="#34d399" stroke-width="0.7" opacity="0.6"/>
+    <text x="92" y="42" text-anchor="middle" font-size="10" fill="#d1fae5">+ getProfile()</text>
+    <text x="92" y="56" text-anchor="middle" font-size="10" fill="#d1fae5">+ update()</text>
+  </g>
+
+  <!-- Dependency arrows: Services → Repositories (dashed) -->
+  <line x1="177" y1="368" x2="177" y2="304" stroke="#64748b" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#depend-arrow)"/>
+  <line x1="405" y1="368" x2="402" y2="304" stroke="#64748b" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#depend-arrow)"/>
+  <line x1="645" y1="368" x2="630" y2="304" stroke="#64748b" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#depend-arrow)"/>
+  <line x1="885" y1="368" x2="873" y2="304" stroke="#64748b" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#depend-arrow)"/>
+
+  <!-- ============================================================ -->
+  <!-- LAYER 3: DESIGN PATTERN LAYER -->
+  <!-- ============================================================ -->
+  
+  <rect x="80" y="460" width="1240" height="28" rx="4" fill="#451a03" opacity="0.6"/>
+  <text x="700" y="479" text-anchor="middle" font-size="11" font-weight="600" fill="#fbbf24" letter-spacing="3">DESIGN PATTERN LAYER — Singleton · Observer · Factory · Strategy</text>
+
+  <!-- Database Singleton -->
+  <g filter="url(#shadow)" transform="translate(90, 502)">
+    <rect width="185" height="76" rx="8" fill="url(#red-grad)" stroke="#f87171" stroke-width="1.3"/>
+    <rect width="185" height="26" rx="8" fill="#7f1d1d"/>
+    <rect width="185" height="10" y="16" fill="#7f1d1d"/>
+    <text x="92" y="20" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">Database</text>
+    <line x1="8" y1="26" x2="177" y2="26" stroke="#f87171" stroke-width="0.7" opacity="0.6"/>
+    <text x="92" y="42" text-anchor="middle" font-size="9" fill="#fecaca" font-style="italic">«Singleton»</text>
+    <text x="92" y="58" text-anchor="middle" font-size="9.5" fill="#fecaca">getInstance()</text>
+    <text x="92" y="72" text-anchor="middle" font-size="9.5" fill="#fecaca">connect()</text>
+  </g>
+  <!-- OrderEventEmitter -->
+  <g filter="url(#shadow)" transform="translate(320, 502)">
+    <rect width="215" height="76" rx="8" fill="url(#orange-grad)" stroke="#fbbf24" stroke-width="1.3"/>
+    <rect width="215" height="26" rx="8" fill="#78350f"/>
+    <rect width="215" height="10" y="16" fill="#78350f"/>
+    <text x="107" y="20" text-anchor="middle" font-size="12.5" font-weight="700" fill="#ffffff">OrderEventEmitter</text>
+    <line x1="8" y1="26" x2="207" y2="26" stroke="#fbbf24" stroke-width="0.7" opacity="0.6"/>
+    <text x="107" y="42" text-anchor="middle" font-size="9" fill="#fef3c7" font-style="italic">«Singleton + Observer»</text>
+    <text x="107" y="58" text-anchor="middle" font-size="9.5" fill="#fef3c7">emit(event, data)</text>
+    <text x="107" y="72" text-anchor="middle" font-size="9.5" fill="#fef3c7">on(event, handler)</text>
+  </g>
+  <!-- NotificationFactory -->
+  <g filter="url(#shadow)" transform="translate(582, 502)">
+    <rect width="205" height="76" rx="8" fill="url(#orange-grad)" stroke="#fbbf24" stroke-width="1.3"/>
+    <rect width="205" height="26" rx="8" fill="#78350f"/>
+    <rect width="205" height="10" y="16" fill="#78350f"/>
+    <text x="102" y="20" text-anchor="middle" font-size="12.5" font-weight="700" fill="#ffffff">NotificationFactory</text>
+    <line x1="8" y1="26" x2="197" y2="26" stroke="#fbbf24" stroke-width="0.7" opacity="0.6"/>
+    <text x="102" y="42" text-anchor="middle" font-size="9" fill="#fef3c7" font-style="italic">«Factory»</text>
+    <text x="102" y="58" text-anchor="middle" font-size="9.5" fill="#fef3c7">+ create(type)</text>
+    <text x="102" y="72" text-anchor="middle" font-size="9.5" fill="#fef3c7">+ register(type, class)</text>
+  </g>
+  <!-- PaymentContext -->
+  <g filter="url(#shadow)" transform="translate(833, 502)">
+    <rect width="195" height="76" rx="8" fill="url(#orange-grad)" stroke="#fbbf24" stroke-width="1.3"/>
+    <rect width="195" height="26" rx="8" fill="#78350f"/>
+    <rect width="195" height="10" y="16" fill="#78350f"/>
+    <text x="97" y="20" text-anchor="middle" font-size="12.5" font-weight="700" fill="#ffffff">PaymentContext</text>
+    <line x1="8" y1="26" x2="187" y2="26" stroke="#fbbf24" stroke-width="0.7" opacity="0.6"/>
+    <text x="97" y="42" text-anchor="middle" font-size="9" fill="#fef3c7" font-style="italic">«Strategy» context</text>
+    <text x="97" y="58" text-anchor="middle" font-size="9.5" fill="#fef3c7">setStrategy(strategy)</text>
+    <text x="97" y="72" text-anchor="middle" font-size="9.5" fill="#fef3c7">executePayment(data)</text>
+  </g>
+
+  <!-- Pattern relationship: PaymentService → PaymentContext -->
+  <line x1="645" y1="436" x2="930" y2="502" stroke="#f59e0b" stroke-width="1.3" stroke-dasharray="6,3" marker-end="url(#pattern-arrow)"/>
+  <text x="800" y="478" text-anchor="middle" font-size="9" fill="#f59e0b" transform="rotate(-10, 800, 478)">uses Strategy</text>
+
+  <!-- Pattern relationship: OrderEventEmitter → NotificationFactory -->
+  <line x1="535" y1="540" x2="582" y2="540" stroke="#f59e0b" stroke-width="1.3" stroke-dasharray="4,3" marker-end="url(#pattern-arrow)"/>
+  <text x="558" y="535" text-anchor="middle" font-size="8" fill="#f59e0b">triggers</text>
+
+  <!-- ============================================================ -->
+  <!-- LAYER 4: NOTIFICATION HIERARCHY -->
+  <!-- ============================================================ -->
+  
+  <rect x="80" y="608" width="1240" height="28" rx="4" fill="#1a1a2e" opacity="0.8"/>
+  <text x="700" y="627" text-anchor="middle" font-size="11" font-weight="600" fill="#93c5fd" letter-spacing="3">NOTIFICATION HIERARCHY — Factory + Polymorphism</text>
+
+  <!-- BaseNotification (abstract) -->
+  <g filter="url(#shadow)" transform="translate(550, 648)">
+    <rect width="210" height="76" rx="8" fill="#1e293b" stroke="#475569" stroke-width="1.5" stroke-dasharray="6,2"/>
+    <rect width="210" height="26" rx="8" fill="#0f172a"/>
+    <rect width="210" height="10" y="16" fill="#0f172a"/>
+    <text x="105" y="11" text-anchor="middle" font-size="9" fill="#94a3b8" font-style="italic">«abstract»</text>
+    <text x="105" y="24" text-anchor="middle" font-size="13" font-weight="700" fill="#e2e8f0">BaseNotification</text>
+    <line x1="8" y1="28" x2="202" y2="28" stroke="#475569" stroke-width="0.8" opacity="0.6"/>
+    <text x="105" y="44" text-anchor="middle" font-size="10" fill="#94a3b8">- type: string</text>
+    <text x="105" y="58" text-anchor="middle" font-size="10" fill="#94a3b8" font-style="italic">+ toPayload(): Object</text>
+    <text x="105" y="72" text-anchor="middle" font-size="9" fill="#64748b">«abstract method»</text>
+  </g>
+
+  <!-- Notification subclasses -->
+  <!-- OrderNotification -->
+  <g filter="url(#subtle-shadow)" transform="translate(90, 776)">
+    <rect width="172" height="56" rx="7" fill="#1e293b" stroke="#475569" stroke-width="1.2"/>
+    <rect width="172" height="24" rx="7" fill="#0f172a"/>
+    <rect width="172" height="8" y="16" fill="#0f172a"/>
+    <text x="86" y="18" text-anchor="middle" font-size="11.5" font-weight="600" fill="#cbd5e1">OrderNotification</text>
+    <line x1="8" y1="24" x2="164" y2="24" stroke="#475569" stroke-width="0.7" opacity="0.5"/>
+    <text x="86" y="39" text-anchor="middle" font-size="9.5" fill="#94a3b8">+ toPayload(): Object</text>
+    <text x="86" y="52" text-anchor="middle" font-size="9" fill="#64748b">orderId, status</text>
+  </g>
+  <!-- PaymentNotification -->
+  <g filter="url(#subtle-shadow)" transform="translate(305, 776)">
+    <rect width="185" height="56" rx="7" fill="#1e293b" stroke="#475569" stroke-width="1.2"/>
+    <rect width="185" height="24" rx="7" fill="#0f172a"/>
+    <rect width="185" height="8" y="16" fill="#0f172a"/>
+    <text x="92" y="18" text-anchor="middle" font-size="11.5" font-weight="600" fill="#cbd5e1">PaymentNotification</text>
+    <line x1="8" y1="24" x2="177" y2="24" stroke="#475569" stroke-width="0.7" opacity="0.5"/>
+    <text x="92" y="39" text-anchor="middle" font-size="9.5" fill="#94a3b8">+ toPayload(): Object</text>
+    <text x="92" y="52" text-anchor="middle" font-size="9" fill="#64748b">amount, status</text>
+  </g>
+  <!-- ChatNotification -->
+  <g filter="url(#subtle-shadow)" transform="translate(540, 776)">
+    <rect width="175" height="56" rx="7" fill="#1e293b" stroke="#475569" stroke-width="1.2"/>
+    <rect width="175" height="24" rx="7" fill="#0f172a"/>
+    <rect width="175" height="8" y="16" fill="#0f172a"/>
+    <text x="87" y="18" text-anchor="middle" font-size="11.5" font-weight="600" fill="#cbd5e1">ChatNotification</text>
+    <line x1="8" y1="24" x2="167" y2="24" stroke="#475569" stroke-width="0.7" opacity="0.5"/>
+    <text x="87" y="39" text-anchor="middle" font-size="9.5" fill="#94a3b8">+ toPayload(): Object</text>
+    <text x="87" y="52" text-anchor="middle" font-size="9" fill="#64748b">message, sender</text>
+  </g>
+  <!-- ListingNotification -->
+  <g filter="url(#subtle-shadow)" transform="translate(762, 776)">
+    <rect width="190" height="56" rx="7" fill="#1e293b" stroke="#475569" stroke-width="1.2"/>
+    <rect width="190" height="24" rx="7" fill="#0f172a"/>
+    <rect width="190" height="8" y="16" fill="#0f172a"/>
+    <text x="95" y="18" text-anchor="middle" font-size="11.5" font-weight="600" fill="#cbd5e1">ListingNotification</text>
+    <line x1="8" y1="24" x2="182" y2="24" stroke="#475569" stroke-width="0.7" opacity="0.5"/>
+    <text x="95" y="39" text-anchor="middle" font-size="9.5" fill="#94a3b8">+ toPayload(): Object</text>
+    <text x="95" y="52" text-anchor="middle" font-size="9" fill="#64748b">listingId, action</text>
+  </g>
+
+  <!-- Inheritance arrows: notification subclasses → BaseNotification -->
+  <line x1="176" y1="776" x2="600" y2="724" stroke="#94a3b8" stroke-width="1.3" marker-end="url(#inherit-hollow)"/>
+  <line x1="397" y1="776" x2="630" y2="724" stroke="#94a3b8" stroke-width="1.3" marker-end="url(#inherit-hollow)"/>
+  <line x1="627" y1="776" x2="660" y2="724" stroke="#94a3b8" stroke-width="1.3" marker-end="url(#inherit-hollow)"/>
+  <line x1="857" y1="776" x2="720" y2="724" stroke="#94a3b8" stroke-width="1.3" marker-end="url(#inherit-hollow)"/>
+
+  <!-- NotificationFactory → BaseNotification (creates) -->
+  <line x1="684" y1="578" x2="684" y2="648" stroke="#f59e0b" stroke-width="1.3" stroke-dasharray="5,3" marker-end="url(#pattern-arrow)"/>
+  <text x="695" y="618" font-size="9" fill="#f59e0b">creates</text>
+
+  <!-- ============================================================ -->
+  <!-- LAYER 5: PAYMENT STRATEGY HIERARCHY -->
+  <!-- ============================================================ -->
+  
+  <rect x="80" y="868" width="1240" height="28" rx="4" fill="#1a1a2e" opacity="0.8"/>
+  <text x="700" y="887" text-anchor="middle" font-size="11" font-weight="600" fill="#93c5fd" letter-spacing="3">PAYMENT STRATEGY HIERARCHY — Strategy Pattern + Polymorphism</text>
+
+  <!-- BasePaymentStrategy (abstract) -->
+  <g filter="url(#shadow)" transform="translate(550, 908)">
+    <rect width="215" height="76" rx="8" fill="#1e293b" stroke="#475569" stroke-width="1.5" stroke-dasharray="6,2"/>
+    <rect width="215" height="26" rx="8" fill="#0f172a"/>
+    <rect width="215" height="10" y="16" fill="#0f172a"/>
+    <text x="107" y="11" text-anchor="middle" font-size="9" fill="#94a3b8" font-style="italic">«abstract»</text>
+    <text x="107" y="24" text-anchor="middle" font-size="13" font-weight="700" fill="#e2e8f0">BasePaymentStrategy</text>
+    <line x1="8" y1="28" x2="207" y2="28" stroke="#475569" stroke-width="0.8" opacity="0.6"/>
+    <text x="107" y="44" text-anchor="middle" font-size="10" fill="#94a3b8" font-style="italic">+ createOrder(): Promise</text>
+    <text x="107" y="58" text-anchor="middle" font-size="10" fill="#94a3b8" font-style="italic">+ verifyPayment(): boolean</text>
+    <text x="107" y="72" text-anchor="middle" font-size="9" fill="#64748b">«abstract methods»</text>
+  </g>
+
+  <!-- RazorpayStrategy -->
+  <g filter="url(#subtle-shadow)" transform="translate(380, 1038)">
+    <rect width="190" height="60" rx="7" fill="#1e293b" stroke="#475569" stroke-width="1.2"/>
+    <rect width="190" height="24" rx="7" fill="#0f172a"/>
+    <rect width="190" height="8" y="16" fill="#0f172a"/>
+    <text x="95" y="18" text-anchor="middle" font-size="12" font-weight="600" fill="#cbd5e1">RazorpayStrategy</text>
+    <line x1="8" y1="24" x2="182" y2="24" stroke="#475569" stroke-width="0.7" opacity="0.5"/>
+    <text x="95" y="38" text-anchor="middle" font-size="9.5" fill="#94a3b8">+ createOrder(): Promise</text>
+    <text x="95" y="52" text-anchor="middle" font-size="9.5" fill="#94a3b8">+ verifyPayment(): boolean</text>
+  </g>
+  <!-- CODStrategy -->
+  <g filter="url(#subtle-shadow)" transform="translate(620, 1038)">
+    <rect width="170" height="60" rx="7" fill="#1e293b" stroke="#475569" stroke-width="1.2"/>
+    <rect width="170" height="24" rx="7" fill="#0f172a"/>
+    <rect width="170" height="8" y="16" fill="#0f172a"/>
+    <text x="85" y="18" text-anchor="middle" font-size="12" font-weight="600" fill="#cbd5e1">CODStrategy</text>
+    <line x1="8" y1="24" x2="162" y2="24" stroke="#475569" stroke-width="0.7" opacity="0.5"/>
+    <text x="85" y="38" text-anchor="middle" font-size="9.5" fill="#94a3b8">+ createOrder(): Promise</text>
+    <text x="85" y="52" text-anchor="middle" font-size="9.5" fill="#94a3b8">+ verifyPayment(): boolean</text>
+  </g>
+
+  <!-- Inheritance: strategies → BasePaymentStrategy -->
+  <line x1="475" y1="1038" x2="620" y2="984" stroke="#94a3b8" stroke-width="1.3" marker-end="url(#inherit-hollow)"/>
+  <line x1="705" y1="1038" x2="710" y2="984" stroke="#94a3b8" stroke-width="1.3" marker-end="url(#inherit-hollow)"/>
+
+  <!-- PaymentContext → BasePaymentStrategy -->
+  <line x1="930" y1="578" x2="720" y2="908" stroke="#f59e0b" stroke-width="1.3" stroke-dasharray="5,3" marker-end="url(#pattern-arrow)"/>
+  <text x="870" y="760" font-size="9" fill="#f59e0b" transform="rotate(-65, 870, 760)">delegates to</text>
+
+  <!-- ============================================================ -->
+  <!-- LAYER 6: MODEL LAYER -->
+  <!-- ============================================================ -->
+  
+  <rect x="80" y="1128" width="1240" height="28" rx="4" fill="#0c1a3a" opacity="0.8"/>
+  <text x="700" y="1147" text-anchor="middle" font-size="11" font-weight="600" fill="#60a5fa" letter-spacing="3">MODEL LAYER — Mongoose Models (Encapsulation)</text>
+
+  <!-- User Model -->
+  <g filter="url(#shadow)" transform="translate(90, 1170)">
+    <rect width="185" height="76" rx="8" fill="url(#blue-grad)" stroke="#60a5fa" stroke-width="1.3"/>
+    <rect width="185" height="26" rx="8" fill="#1e3a8a"/>
+    <rect width="185" height="10" y="16" fill="#1e3a8a"/>
+    <text x="92" y="20" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">User</text>
+    <line x1="8" y1="26" x2="177" y2="26" stroke="#60a5fa" stroke-width="0.7" opacity="0.6"/>
+    <text x="92" y="42" text-anchor="middle" font-size="9.5" fill="#bfdbfe">- name, email, password</text>
+    <text x="92" y="56" text-anchor="middle" font-size="9.5" fill="#bfdbfe">- role, createdAt</text>
+    <text x="92" y="70" text-anchor="middle" font-size="10" fill="#dbeafe">+ getPublicProfile()</text>
+  </g>
+  <!-- Listing Model -->
+  <g filter="url(#shadow)" transform="translate(315, 1170)">
+    <rect width="185" height="76" rx="8" fill="url(#blue-grad)" stroke="#60a5fa" stroke-width="1.3"/>
+    <rect width="185" height="26" rx="8" fill="#1e3a8a"/>
+    <rect width="185" height="10" y="16" fill="#1e3a8a"/>
+    <text x="92" y="20" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">Listing</text>
+    <line x1="8" y1="26" x2="177" y2="26" stroke="#60a5fa" stroke-width="0.7" opacity="0.6"/>
+    <text x="92" y="42" text-anchor="middle" font-size="9.5" fill="#bfdbfe">- title, price, category</text>
+    <text x="92" y="56" text-anchor="middle" font-size="9.5" fill="#bfdbfe">- sellerId, status</text>
+    <text x="92" y="70" text-anchor="middle" font-size="10" fill="#dbeafe">+ toSummary()</text>
+  </g>
+  <!-- Order Model -->
+  <g filter="url(#shadow)" transform="translate(540, 1170)">
+    <rect width="185" height="76" rx="8" fill="url(#blue-grad)" stroke="#60a5fa" stroke-width="1.3"/>
+    <rect width="185" height="26" rx="8" fill="#1e3a8a"/>
+    <rect width="185" height="10" y="16" fill="#1e3a8a"/>
+    <text x="92" y="20" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">Order</text>
+    <line x1="8" y1="26" x2="177" y2="26" stroke="#60a5fa" stroke-width="0.7" opacity="0.6"/>
+    <text x="92" y="42" text-anchor="middle" font-size="9.5" fill="#bfdbfe">- buyerId, sellerId</text>
+    <text x="92" y="56" text-anchor="middle" font-size="9.5" fill="#bfdbfe">- listingId, status</text>
+    <text x="92" y="70" text-anchor="middle" font-size="10" fill="#dbeafe">+ updateStatus()</text>
+  </g>
+  <!-- Conversation Model -->
+  <g filter="url(#shadow)" transform="translate(765, 1170)">
+    <rect width="185" height="76" rx="8" fill="url(#blue-grad)" stroke="#60a5fa" stroke-width="1.3"/>
+    <rect width="185" height="26" rx="8" fill="#1e3a8a"/>
+    <rect width="185" height="10" y="16" fill="#1e3a8a"/>
+    <text x="92" y="20" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">Conversation</text>
+    <line x1="8" y1="26" x2="177" y2="26" stroke="#60a5fa" stroke-width="0.7" opacity="0.6"/>
+    <text x="92" y="42" text-anchor="middle" font-size="9.5" fill="#bfdbfe">- participants[]</text>
+    <text x="92" y="56" text-anchor="middle" font-size="9.5" fill="#bfdbfe">- messages[], listingId</text>
+    <text x="92" y="70" text-anchor="middle" font-size="10" fill="#dbeafe">+ addMessage()</text>
+  </g>
+  <!-- Notification Model -->
+  <g filter="url(#shadow)" transform="translate(990, 1170)">
+    <rect width="185" height="76" rx="8" fill="url(#blue-grad)" stroke="#60a5fa" stroke-width="1.3"/>
+    <rect width="185" height="26" rx="8" fill="#1e3a8a"/>
+    <rect width="185" height="10" y="16" fill="#1e3a8a"/>
+    <text x="92" y="20" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">Notification</text>
+    <line x1="8" y1="26" x2="177" y2="26" stroke="#60a5fa" stroke-width="0.7" opacity="0.6"/>
+    <text x="92" y="42" text-anchor="middle" font-size="9.5" fill="#bfdbfe">- userId, type, payload</text>
+    <text x="92" y="56" text-anchor="middle" font-size="9.5" fill="#bfdbfe">- read: boolean</text>
+    <text x="92" y="70" text-anchor="middle" font-size="10" fill="#dbeafe">+ markRead()</text>
+  </g>
+
+  <!-- Model relationships: User 1 sells * Listing -->
+  <line x1="275" y1="1208" x2="315" y2="1208" stroke="#60a5fa" stroke-width="1.2" marker-end="url(#depend-arrow)"/>
+  <text x="285" y="1200" text-anchor="middle" font-size="8.5" fill="#93c5fd">1 sells *</text>
+  <!-- User 1 has * Order -->
+  <line x1="275" y1="1220" x2="540" y2="1220" stroke="#60a5fa" stroke-width="1.2" stroke-dasharray="4,2" marker-end="url(#depend-arrow)"/>
+  <text x="407" y="1215" text-anchor="middle" font-size="8.5" fill="#93c5fd">1 has *</text>
+
+  <!-- ============================================================ -->
+  <!-- LAYER 7: CONTROLLER LAYER -->
+  <!-- ============================================================ -->
+  
+  <!-- Connecting line from services to controllers -->
+  <line x1="700" y1="1280" x2="700" y2="1340" stroke="#334155" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <polygon points="695,1340 705,1340 700,1350" fill="#475569"/>
+
+  <rect x="80" y="1360" width="1240" height="28" rx="4" fill="#111827" opacity="0.9"/>
+  <text x="700" y="1379" text-anchor="middle" font-size="11" font-weight="600" fill="#9ca3af" letter-spacing="3">CONTROLLER LAYER — HTTP Interface</text>
+
+  <!-- Controller block -->
+  <g filter="url(#shadow)" transform="translate(420, 1400)">
+    <rect width="565" height="72" rx="10" fill="url(#ctrl-grad)" stroke="#475569" stroke-width="1.5"/>
+    <rect width="565" height="26" rx="10" fill="#0f172a"/>
+    <rect width="565" height="10" y="16" fill="#0f172a"/>
+    <text x="282" y="20" text-anchor="middle" font-size="14" font-weight="700" fill="#e2e8f0">Controllers (index.js)</text>
+    <line x1="10" y1="26" x2="555" y2="26" stroke="#475569" stroke-width="0.8" opacity="0.6"/>
+    <text x="282" y="44" text-anchor="middle" font-size="10" fill="#94a3b8">Thin HTTP layer — delegates to services</text>
+    <text x="282" y="60" text-anchor="middle" font-size="10" fill="#64748b">authRoutes · listingRoutes · orderRoutes · profileRoutes · notificationRoutes</text>
+  </g>
+
+  <!-- Services → Controllers (calls) - reversed arrows showing controller calls services -->
+  <line x1="177" y1="1400" x2="430" y2="1436" stroke="#64748b" stroke-width="1.1" stroke-dasharray="4,3" marker-end="url(#depend-arrow)"/>
+  <line x1="405" y1="1400" x2="530" y2="1436" stroke="#64748b" stroke-width="1.1" stroke-dasharray="4,3" marker-end="url(#depend-arrow)"/>
+  <line x1="645" y1="1400" x2="700" y2="1436" stroke="#64748b" stroke-width="1.1" stroke-dasharray="4,3" marker-end="url(#depend-arrow)"/>
+  <line x1="885" y1="1400" x2="870" y2="1436" stroke="#64748b" stroke-width="1.1" stroke-dasharray="4,3" marker-end="url(#depend-arrow)"/>
+
+  <!-- services bottom connectors -->
+  <line x1="177" y1="1280" x2="177" y2="1400" stroke="#334155" stroke-width="0.8" stroke-dasharray="3,3"/>
+  <line x1="405" y1="1280" x2="405" y2="1400" stroke="#334155" stroke-width="0.8" stroke-dasharray="3,3"/>
+  <line x1="645" y1="1280" x2="645" y2="1400" stroke="#334155" stroke-width="0.8" stroke-dasharray="3,3"/>
+  <line x1="885" y1="1280" x2="885" y2="1400" stroke="#334155" stroke-width="0.8" stroke-dasharray="3,3"/>
+
+  <!-- ============================================================ -->
+  <!-- LEGEND -->
+  <!-- ============================================================ -->
+  
+  <g transform="translate(1040, 88)">
+    <rect width="282" height="230" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1.3"/>
+    <text x="141" y="22" text-anchor="middle" font-size="12" font-weight="700" fill="#e2e8f0">Legend</text>
+    <line x1="16" y1="30" x2="266" y2="30" stroke="#334155" stroke-width="0.8"/>
+
+    <!-- Inheritance -->
+    <line x1="24" y1="52" x2="90" y2="52" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#inherit-hollow)"/>
+    <text x="100" y="56" font-size="10" fill="#cbd5e1">Inheritance</text>
+
+    <!-- Dependency -->
+    <line x1="24" y1="76" x2="90" y2="76" stroke="#64748b" stroke-width="1.3" stroke-dasharray="5,3" marker-end="url(#depend-arrow)"/>
+    <text x="100" y="80" font-size="10" fill="#cbd5e1">Dependency / Uses</text>
+
+    <!-- Pattern -->
+    <line x1="24" y1="100" x2="90" y2="100" stroke="#f59e0b" stroke-width="1.3" stroke-dasharray="5,3" marker-end="url(#pattern-arrow)"/>
+    <text x="100" y="104" font-size="10" fill="#cbd5e1">Pattern Relationship</text>
+
+    <line x1="16" y1="114" x2="266" y2="114" stroke="#334155" stroke-width="0.6" opacity="0.5"/>
+    <text x="141" y="130" text-anchor="middle" font-size="10" font-weight="600" fill="#94a3b8">Design Patterns</text>
+
+    <rect x="20" y="138" width="12" height="12" rx="2" fill="#7c3aed"/>
+    <text x="40" y="149" font-size="9.5" fill="#c4b5fd">Repository (Abstract)</text>
+
+    <rect x="20" y="158" width="12" height="12" rx="2" fill="#059669"/>
+    <text x="40" y="169" font-size="9.5" fill="#6ee7b7">Service Layer</text>
+
+    <rect x="20" y="178" width="12" height="12" rx="2" fill="#d97706"/>
+    <text x="40" y="189" font-size="9.5" fill="#fbbf24">Design Patterns</text>
+
+    <rect x="20" y="198" width="12" height="12" rx="2" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <text x="40" y="209" font-size="9.5" fill="#94a3b8">Abstract Classes</text>
+
+    <rect x="155" y="138" width="12" height="12" rx="2" fill="#2563eb"/>
+    <text x="175" y="149" font-size="9.5" fill="#60a5fa">Models</text>
+
+    <rect x="155" y="158" width="12" height="12" rx="2" fill="#334155"/>
+    <text x="175" y="169" font-size="9.5" fill="#9ca3af">Controllers</text>
+
+    <rect x="155" y="178" width="12" height="12" rx="2" fill="#dc2626"/>
+    <text x="175" y="189" font-size="9.5" fill="#f87171">Singleton</text>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- PATTERN LABELS (floating) -->
+  <!-- ============================================================ -->
+  
+  <!-- Singleton badge on Database -->
+  <rect x="90" y="492" width="88" height="16" rx="8" fill="#7f1d1d" stroke="#f87171" stroke-width="0.8"/>
+  <text x="134" y="504" text-anchor="middle" font-size="8" fill="#fca5a5" font-weight="600">SINGLETON</text>
+
+  <!-- Observer badge on EventEmitter -->
+  <rect x="320" y="492" width="100" height="16" rx="8" fill="#78350f" stroke="#fbbf24" stroke-width="0.8"/>
+  <text x="370" y="504" text-anchor="middle" font-size="8" fill="#fde68a" font-weight="600">OBSERVER</text>
+
+  <!-- Factory badge -->
+  <rect x="582" y="492" width="80" height="16" rx="8" fill="#78350f" stroke="#fbbf24" stroke-width="0.8"/>
+  <text x="622" y="504" text-anchor="middle" font-size="8" fill="#fde68a" font-weight="600">FACTORY</text>
+
+  <!-- Strategy badge -->
+  <rect x="833" y="492" width="80" height="16" rx="8" fill="#78350f" stroke="#fbbf24" stroke-width="0.8"/>
+  <text x="873" y="504" text-anchor="middle" font-size="8" fill="#fde68a" font-weight="600">STRATEGY</text>
+
+  <!-- ============================================================ -->
+  <!-- BOTTOM FOOTER -->
+  <!-- ============================================================ -->
+  <line x1="100" y1="1500" x2="1300" y2="1500" stroke="#334155" stroke-width="1"/>
+  <text x="700" y="1522" text-anchor="middle" font-size="10" fill="#475569">CampusXchange System Architecture  •  UML Class Diagram  •  Diagram 1 of 4</text>
+  <text x="700" y="1538" text-anchor="middle" font-size="9" fill="#334155">Generated for Academic End-Term Evaluation  •  Layered Architecture  •  SOLID Principles</text>
+
+</svg>
