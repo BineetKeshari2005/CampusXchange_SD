@@ -63,7 +63,7 @@ export default function ProductDetail() {
 
     try {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/profile/${sellerId}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/api/profile/public/${sellerId}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }

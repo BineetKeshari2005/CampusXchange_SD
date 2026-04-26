@@ -19,7 +19,7 @@ export default function PublicUserProfile() {
   const fetchPublicUser = async () => {
     try {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/public-user/${id}`
+        `${process.env.NEXT_PUBLIC_API_URL}/api/profile/public/${id}`
       );
 
       const data = await res.json();

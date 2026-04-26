@@ -35,7 +35,7 @@ export default function EditProfilePage() {
     if (!token) return redirect("/auth/login"); // Use redirect helper
 
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/profile/me`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/profile`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -74,38 +74,38 @@ export default function EditProfilePage() {
     }
 
     try {
-        // Step 1: Update text fields
-        const textRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/profile/me`, {
+        const formData = new FormData();
+        // Add all text fields to FormData
+        Object.keys(profile).forEach(key => {
+            if (key !== 'profilePhoto') {
+                formData.append(key, profile[key]);
+            }
+        });
+        
+        // Add photo if selected
+        if (photoFile) {
+            formData.append("profilePhoto", photoFile);
+        }
+
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/profile`, {
           method: "PUT",
           headers: {
-            "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
           },
-          body: JSON.stringify(profile),
+          body: formData,
         });
 
-        if (!textRes.ok) throw new Error("Failed to update text fields.");
-
-        // Step 2: Upload profile photo
-        if (photoFile) {
-          const formData = new FormData();
-          formData.append("photo", photoFile);
-
-          const photoRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/profile/me/photo`, {
-            method: "PUT",
-            headers: { Authorization: `Bearer ${token}` },
-            body: formData,
-          });
-
-          if (!photoRes.ok) throw new Error("Failed to upload photo.");
+        if (!res.ok) {
+            const errorData = await res.json();
+            throw new Error(errorData.message || "Failed to update profile.");
         }
 
         alert("Profile updated successfully!");
-        redirect("/profile"); // Use redirect helper
+        redirect("/profile");
         
     } catch (error) {
         console.error("Profile update error:", error);
-        alert(`Failed to save profile: ${error.message || 'Check console for details.'}`);
+        alert(`Failed to save profile: ${error.message}`);
     } finally {
         setLoading(false);
     }

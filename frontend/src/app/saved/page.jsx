@@ -44,7 +44,7 @@ export default function SavedPage() {
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_API_URL}/api/saved/${id}`,
         {
-          method: "DELETE",
+          method: "POST",
           headers: { Authorization: `Bearer ${token}` },
         }
       );

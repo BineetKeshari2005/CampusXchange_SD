@@ -98,10 +98,10 @@ export default function HomePage() {
     const isSaved = savedIds.includes(id);
 
     try {
-      await fetch(
+      const res = await fetch(
         `${process.env.NEXT_PUBLIC_API_URL}/api/saved/${id}`,
         {
-          method: isSaved ? "DELETE" : "POST",
+          method: "POST",
           headers: { Authorization: `Bearer ${token}` },
         }
       );
