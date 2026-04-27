@@ -1,18 +1,6 @@
-# 🎓 CampusXchange
+# CampusXchange
 
-<p align="center">
-  <img src="diagrams/banner.png" alt="CampusXchange Banner" width="100%">
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Next.js-16.1-black?logo=next.js" alt="Next.js">
-  <img src="https://img.shields.io/badge/Node.js-20.x-green?logo=node.js" alt="Node.js">
-  <img src="https://img.shields.io/badge/MongoDB-Atlas-success?logo=mongodb" alt="MongoDB">
-  <img src="https://img.shields.io/badge/Socket.io-Real--time-blue?logo=socket.io" alt="Socket.io">
-  <img src="https://img.shields.io/badge/License-ISC-orange" alt="License">
-</p>
-
-## 📝 Project Description
+## Project Description
 
 **CampusXchange** is a secure, real-time marketplace platform designed exclusively for university students. 
 
@@ -27,18 +15,18 @@ To provide a hands-on demonstration of scalable system architecture, implementin
 
 ---
 
-## ✨ Features
+## Features
 
-- **🔐 Verified Student Access**: Secure JWT-based authentication ensuring only students can participate.
-- **💬 Real-Time Negotiation**: Instant messaging between buyers and sellers powered by Socket.io.
-- **💳 Secure Payments**: Integrated Razorpay gateway for safe transactions with automated verification.
-- **📦 Smart Listings**: Effortlessly create, manage, and browse product listings with image support.
-- **🔍 Advanced Discovery**: Multi-parameter search, filtering, and pagination to find items quickly.
-- **📊 User Dashboards**: Personalized views for managing sales, purchases, and saved items.
+- **Verified Student Access**: Secure JWT-based authentication ensuring only students can participate.
+- **Real-Time Negotiation**: Instant messaging between buyers and sellers powered by Socket.io.
+- **Secure Payments**: Integrated Razorpay gateway for safe transactions with automated verification.
+- **Smart Listings**: Effortlessly create, manage, and browse product listings with image support.
+- **Advanced Discovery**: Multi-parameter search, filtering, and pagination to find items quickly.
+- **User Dashboards**: Personalized views for managing sales, purchases, and saved items.
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Frontend**: Next.js 16 (App Router), Tailwind CSS, Framer Motion
 - **Backend**: Node.js, Express.js
@@ -49,7 +37,7 @@ To provide a hands-on demonstration of scalable system architecture, implementin
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
 The project follows a **Layered Architecture** to ensure separation of concerns and high scalability.
 
@@ -57,14 +45,9 @@ The project follows a **Layered Architecture** to ensure separation of concerns 
 - **Service Layer Pattern**: 100% of business logic is encapsulated in the `/services` folder, keeping controllers "thin" and focused only on request handling.
 - **Stateless Authentication**: Uses JWT for scalable, secure session management.
 
-### Architecture Visualization
-<p align="center">
-  <img src="diagrams/CampusXchange_ClassDiagram.svg" alt="Class Diagram" width="80%">
-</p>
-
 ---
 
-## 🚀 Installation & Setup
+## Installation & Setup
 
 Follow these steps to get the project running locally:
 
@@ -116,7 +99,7 @@ cd CampusXchange_SD
 
 ---
 
-## 💡 Usage
+## Usage
 
 1. **Register/Login**: Create a student account using your university credentials.
 2. **Browse Listings**: Use the home feed to find items or search for specific keywords.
@@ -126,27 +109,27 @@ cd CampusXchange_SD
 
 ---
 
-## 📂 Folder Structure
+## Folder Structure
 
 ```text
 CampusXchange_SD/
 ├── backend/
 │   ├── src/
-│   │   ├── services/    # 🧠 Core Business Logic (Critical Layer)
-│   │   ├── controllers/ # ⚡ API Request Handlers
-│   │   ├── models/      # 📂 Database Schemas
-│   │   └── middleware/  # 🛡️ Auth & Validation Logic
+│   │   ├── services/    # Core Business Logic (Critical Layer)
+│   │   ├── controllers/ # API Request Handlers
+│   │   ├── models/      # Database Schemas
+│   │   └── middleware/  # Auth & Validation Logic
 ├── frontend/
 │   ├── src/
-│   │   ├── components/  # 🧩 Reusable UI Elements
-│   │   ├── app/         # 📁 Next.js Pages & Routing
-│   │   └── services/    # 📞 API Client Logic
-└── diagrams/           # 🖼️ System Design Assets
+│   │   ├── components/  # Reusable UI Elements
+│   │   ├── app/         # Next.js Pages & Routing
+│   │   └── services/    # API Client Logic
+└── diagrams/           # System Design Assets
 ```
 
 ---
 
-## 🔮 Future Improvements
+## Future Improvements
 
 - **AI-Powered Recommendations**: Personalizing the feed based on user browsing history.
 - **Multi-Campus Support**: Expanding the platform to support multiple universities with location-based filtering.
@@ -155,4 +138,4 @@ CampusXchange_SD/
 
 ---
 
-<p align="center">Made with ❤️ for the Campus Community</p>
+<p align="center">Made for the Campus Community</p>
