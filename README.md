@@ -1,114 +1,85 @@
-## Live Frontend Link
+# 📌 CampusXchange: A Scalable Campus Marketplace
 
-🔗 [campus-x-change-gamma.vercel.app](https://campus-x-change-gamma.vercel.app/auth/login)
-
----
-
-# CampusXchange — A Campus Marketplace for Students
-
-## Project Proposal
-
-### 1. Project Title
-
-**CampusXchange** – A Campus Marketplace for Students
+## 📖 Description
+**CampusXchange** is a secure, real-time, full-stack marketplace platform designed exclusively for university students. It enables users to buy, sell, or exchange study materials, electronics, and other essentials within a trusted campus community.
 
 ---
 
-### 2. Problem Statement
-
-Many university students struggle to find affordable study materials, second-hand electronics, and other essential academic resources. Students who want to sell or exchange their used items lack a secure and campus-specific platform to reach interested buyers. Broader marketplaces like OLX or Facebook Marketplace allow external users, reduce trust, and are not built for campus needs. There is also no safe way for students to chat and complete payments inside a campus-only system.
+## 👥 Team Members
+*   **Himanshu Pandey**
+*   **Bineet Kesari**
+*   **Rudraksh Sharma**
+*   **Alok Gangwar**
+*   **Anuj Upadhyay**
 
 ---
 
-### 3. Proposed Solution
+## 🚀 Project Proposal
 
-CampusXchange is a real-time, payment-enabled full-stack web platform designed exclusively for campus communities. Students can buy, sell, or exchange used books, electronics, and notes. The platform includes:
+### 1. Problem Statement
+Many university students struggle to find affordable study materials, second-hand electronics, and other essential academic resources. Students who want to sell or exchange their used items lack a secure and campus-specific platform to reach interested buyers. Broader marketplaces like OLX or Facebook Marketplace allow external users, reduce trust, and are not built for campus needs.
 
+### 2. Proposed Solution
+CampusXchange is a real-time, payment-enabled full-stack web platform designed exclusively for campus communities. The platform includes:
 * Secure JWT-based authentication
 * Real-time buyer–seller chat using Socket.IO
 * Razorpay payment gateway integration
 * Automated payment verification and order management
 * Dedicated buyer and seller dashboards
-* Campus-specific listings with search, filter, and sorting
-* Pagination for performance and smoother browsing
-* Wishlist and saved listings functionality
 
----
-
-### 4. Objectives
-
+### 3. Objectives
 * Allow students to create, read, update, and delete (CRUD) item listings.
 * Implement secure JWT authentication and protected APIs.
 * Enable real-time communication between buyers and sellers.
 * Provide secure Razorpay based online payments and verification.
-* Provide advanced search, sorting, filtering, and pagination for item listings.
-* Support dynamic data fetching across pages using APIs.
-* Include wishlist, bought items, and sold items dashboards.
+* Support advanced search, sorting, filtering, and pagination for listings.
 
 ---
 
-### 5. Tech Stack
-
-| Layer | Technology |
-|---|---|
-| **Frontend** | Next.js, Tailwind CSS, Framer Motion |
-| **Backend** | Node.js, Express.js, Socket.IO |
-| **Database** | MongoDB (Mongoose ORM) |
-| **Authentication** | JWT (JSON Web Tokens) |
-| **Payments** | Razorpay |
-| **Patterns** | Singleton, Observer, Strategy, Factory |
-| **Deployment** | Vercel (Frontend), Render (Backend), MongoDB Atlas |
+## 🏗️ System Architecture & Design
+The project follows a **Layered Architecture** to ensure high maintainability:
+1.  **Presentation Layer (Frontend):** Next.js handles the UI and client-side state.
+2.  **Controller Layer (API Entry):** Manages HTTP requests and validates input.
+3.  **Service Layer (Business Logic):** The "Brain" of the app where all marketplace rules live.
+4.  **Repository Layer (Data Access):** Abstracts database operations.
 
 ---
 
-### 6. System Design & Architecture
+## 🧠 System Design Concepts Implemented ⭐
 
-CampusXchange is built with a focus on **Scalability, Maintainability, and Clean Code** principles.
-
-#### A. Architecture Overview
-The backend follows a **Layered Architecture** (Onion Architecture influences):
-`Request → Route → Controller → Service → Repository → Model → Database`
-
-- **Controllers**: Handle HTTP-specific logic (req/res).
-- **Services**: Contain the core business logic (Auth, Payments, Listings).
-- **Repositories**: Handle all Database interactions (Mongoose). This decouples business logic from the database implementation.
-
-#### B. SOLID Principles Applied
-- **Single Responsibility (SRP)**: Each class/function does one thing. Services handle logic, Repositories handle data, Controllers handle routing.
-- **Open/Closed (OCP)**: New listing types or payment strategies can be added without modifying existing core logic.
-- **Liskov Substitution (LSP)**: All repositories extend a `BaseRepository`, ensuring consistent behavior.
-- **Interface Segregation (ISP)**: API routes are modularized (auth, listings, payments) to prevent "fat" routers.
-- **Dependency Inversion (DIP)**: High-level services depend on repository abstractions, not concrete database calls.
-
-#### C. Design Patterns Used
-- **Singleton**: The `Database` class uses the Singleton pattern to ensure only one connection to MongoDB exists throughout the application lifecycle.
-- **Observer**: `OrderEventEmitter` broadcasts events (like `listingCreated`) to various services (like Notifications) without tight coupling.
-- **Strategy**: `PaymentContext` uses a Strategy pattern to handle different payment providers (currently implemented with `RazorpayStrategy`).
-- **Factory**: `NotificationFactory` is used to create different types of notification objects dynamically based on the event type.
+| Concept | Definition | Application in Project |
+| :--- | :--- | :--- |
+| **Encapsulation** | Hiding internal state and requiring all interaction through well-defined interfaces. | All business logic is encapsulated within the **Services** folder, hidden from controllers. |
+| **Abstraction** | Hiding complex implementation details. | The Repository layer abstracts MongoDB queries, so services don't need to know "how" data is fetched. |
+| **Separation of Concerns** | Dividing a program into distinct sections, each addressing a separate concern. | Clear division between HTTP handling (Controller), Logic (Service), and Data (Repository). |
+| **Modular Design** | Building a system as a collection of independent, interchangeable modules. | Features like Payments, Auth, and Chat are built as independent services. |
+| **Reusability** | Designing code that can be used in multiple parts of the application or future projects. | The `AuthService` is designed to be reusable across different frontends (Web/Mobile). |
+| **Scalability** | The ability of a system to handle increased load by adding resources. | The stateless nature of our JWT auth and modular services allows for horizontal scaling. |
 
 ---
 
-### 7. Roles & Responsibilities
+## 📂 Services Folder Explanation ⭐ (CRITICAL)
+The **Services Folder** is the core of our system design. In many basic applications, logic is scattered inside controllers. In **CampusXchange**, we moved 100% of the business logic into the Services folder.
 
-#### Student User
-* Register and manage profile
-* Create, update, and delete listings
-* Chat in real time with buyers and sellers
-* Make secure online payments
-* View bought and sold dashboards
-* Save favorite products (wishlist)
-
----
-
-### 8. Expected Outcomes
-* A fully functional real-time campus marketplace.
-* Secure payment flow with Razorpay verification.
-* Optimized browsing with pagination, filtering, and sorting.
-* Live buyer–seller communication.
-* Campus-exclusive trusted environment.
-* Automated order and dashboard management.
+*   **Business Logic Centralization:** Rules like "How to verify a payment signature" or "How to calculate profile completion" are handled here.
+*   **Controller-Service Decoupling:** Controllers are "thin"—they only receive requests and delegate the work to the Service layer.
+*   **Benefits:**
+    *   **Maintainability:** Changing a business rule only requires editing one file in the Services folder.
+    *   **Testability:** Services can be tested independently of the UI or HTTP server.
+    *   **Readability:** It is immediately clear where the "rules" of the application are defined.
 
 ---
 
-### 9. Tools & Platforms
-VS Code, GitHub, Postman, MongoDB Atlas, Vercel, Render, Figma (UI/UX Design)
+## ⚙️ Technologies Used
+*   **Frontend:** Next.js, Tailwind CSS, Framer Motion.
+*   **Backend:** Node.js, Express.js, Socket.io.
+*   **Database:** MongoDB (Mongoose ORM).
+*   **Payments:** Razorpay API.
+*   **Auth:** JSON Web Tokens (JWT).
+
+---
+
+## ✅ Conclusion
+**CampusXchange** demonstrates how professional software architecture principles like **SOLID** and **Layered Design** can be applied to a real-world project. The key takeaway was that investing time in a robust **Service Layer** makes the application significantly easier to debug, extend, and scale.
+
+---
