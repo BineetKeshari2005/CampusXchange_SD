@@ -1,85 +1,158 @@
-# 📌 CampusXchange: A Scalable Campus Marketplace
+# 🎓 CampusXchange
 
-## 📖 Description
-**CampusXchange** is a secure, real-time, full-stack marketplace platform designed exclusively for university students. It enables users to buy, sell, or exchange study materials, electronics, and other essentials within a trusted campus community.
+<p align="center">
+  <img src="diagrams/banner.png" alt="CampusXchange Banner" width="100%">
+</p>
 
----
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-16.1-black?logo=next.js" alt="Next.js">
+  <img src="https://img.shields.io/badge/Node.js-20.x-green?logo=node.js" alt="Node.js">
+  <img src="https://img.shields.io/badge/MongoDB-Atlas-success?logo=mongodb" alt="MongoDB">
+  <img src="https://img.shields.io/badge/Socket.io-Real--time-blue?logo=socket.io" alt="Socket.io">
+  <img src="https://img.shields.io/badge/License-ISC-orange" alt="License">
+</p>
 
-## 👥 Team Members
-*   **Himanshu Pandey**
-*   **Bineet Kesari**
-*   **Rudraksh Sharma**
-*   **Alok Gangwar**
-*   **Anuj Upadhyay**
+## 📝 Project Description
 
----
+**CampusXchange** is a secure, real-time marketplace platform designed exclusively for university students. 
 
-## 🚀 Project Proposal
+### The Problem
+University students often find it difficult to trade academic resources (like books and lab equipment) or personal items safely. Public marketplaces like OLX often lack the trust and proximity needed for quick campus transactions.
 
-### 1. Problem Statement
-Many university students struggle to find affordable study materials, second-hand electronics, and other essential academic resources. Students who want to sell or exchange their used items lack a secure and campus-specific platform to reach interested buyers. Broader marketplaces like OLX or Facebook Marketplace allow external users, reduce trust, and are not built for campus needs.
+### The Solution
+CampusXchange provides a dedicated, trust-based environment where students can buy, sell, or exchange items within their own campus. It streamlines the process with integrated real-time chat and secure payment verification.
 
-### 2. Proposed Solution
-CampusXchange is a real-time, payment-enabled full-stack web platform designed exclusively for campus communities. The platform includes:
-* Secure JWT-based authentication
-* Real-time buyer–seller chat using Socket.IO
-* Razorpay payment gateway integration
-* Automated payment verification and order management
-* Dedicated buyer and seller dashboards
-
-### 3. Objectives
-* Allow students to create, read, update, and delete (CRUD) item listings.
-* Implement secure JWT authentication and protected APIs.
-* Enable real-time communication between buyers and sellers.
-* Provide secure Razorpay based online payments and verification.
-* Support advanced search, sorting, filtering, and pagination for listings.
+### Why it was built
+To provide a hands-on demonstration of scalable system architecture, implementing professional patterns like the **Service Layer** and **Real-time Event Handling** in a real-world scenario.
 
 ---
 
-## 🏗️ System Architecture & Design
-The project follows a **Layered Architecture** to ensure high maintainability:
-1.  **Presentation Layer (Frontend):** Next.js handles the UI and client-side state.
-2.  **Controller Layer (API Entry):** Manages HTTP requests and validates input.
-3.  **Service Layer (Business Logic):** The "Brain" of the app where all marketplace rules live.
-4.  **Repository Layer (Data Access):** Abstracts database operations.
+## ✨ Features
+
+- **🔐 Verified Student Access**: Secure JWT-based authentication ensuring only students can participate.
+- **💬 Real-Time Negotiation**: Instant messaging between buyers and sellers powered by Socket.io.
+- **💳 Secure Payments**: Integrated Razorpay gateway for safe transactions with automated verification.
+- **📦 Smart Listings**: Effortlessly create, manage, and browse product listings with image support.
+- **🔍 Advanced Discovery**: Multi-parameter search, filtering, and pagination to find items quickly.
+- **📊 User Dashboards**: Personalized views for managing sales, purchases, and saved items.
 
 ---
 
-## 🧠 System Design Concepts Implemented ⭐
+## 🛠️ Tech Stack
 
-| Concept | Definition | Application in Project |
-| :--- | :--- | :--- |
-| **Encapsulation** | Hiding internal state and requiring all interaction through well-defined interfaces. | All business logic is encapsulated within the **Services** folder, hidden from controllers. |
-| **Abstraction** | Hiding complex implementation details. | The Repository layer abstracts MongoDB queries, so services don't need to know "how" data is fetched. |
-| **Separation of Concerns** | Dividing a program into distinct sections, each addressing a separate concern. | Clear division between HTTP handling (Controller), Logic (Service), and Data (Repository). |
-| **Modular Design** | Building a system as a collection of independent, interchangeable modules. | Features like Payments, Auth, and Chat are built as independent services. |
-| **Reusability** | Designing code that can be used in multiple parts of the application or future projects. | The `AuthService` is designed to be reusable across different frontends (Web/Mobile). |
-| **Scalability** | The ability of a system to handle increased load by adding resources. | The stateless nature of our JWT auth and modular services allows for horizontal scaling. |
+- **Frontend**: Next.js 16 (App Router), Tailwind CSS, Framer Motion
+- **Backend**: Node.js, Express.js
+- **Real-time**: Socket.io (WebSockets)
+- **Database**: MongoDB with Mongoose ODM
+- **Media**: Cloudinary (Image Hosting & Optimization)
+- **Payments**: Razorpay API
 
 ---
 
-## 📂 Services Folder Explanation ⭐ (CRITICAL)
-The **Services Folder** is the core of our system design. In many basic applications, logic is scattered inside controllers. In **CampusXchange**, we moved 100% of the business logic into the Services folder.
+## 🏗️ System Architecture
 
-*   **Business Logic Centralization:** Rules like "How to verify a payment signature" or "How to calculate profile completion" are handled here.
-*   **Controller-Service Decoupling:** Controllers are "thin"—they only receive requests and delegate the work to the Service layer.
-*   **Benefits:**
-    *   **Maintainability:** Changing a business rule only requires editing one file in the Services folder.
-    *   **Testability:** Services can be tested independently of the UI or HTTP server.
-    *   **Readability:** It is immediately clear where the "rules" of the application are defined.
+The project follows a **Layered Architecture** to ensure separation of concerns and high scalability.
 
----
+- **Modular Design**: Each core functionality (Auth, Payments, Chat) is treated as a separate module.
+- **Service Layer Pattern**: 100% of business logic is encapsulated in the `/services` folder, keeping controllers "thin" and focused only on request handling.
+- **Stateless Authentication**: Uses JWT for scalable, secure session management.
 
-## ⚙️ Technologies Used
-*   **Frontend:** Next.js, Tailwind CSS, Framer Motion.
-*   **Backend:** Node.js, Express.js, Socket.io.
-*   **Database:** MongoDB (Mongoose ORM).
-*   **Payments:** Razorpay API.
-*   **Auth:** JSON Web Tokens (JWT).
+### Architecture Visualization
+<p align="center">
+  <img src="diagrams/CampusXchange_ClassDiagram.svg" alt="Class Diagram" width="80%">
+</p>
 
 ---
 
-## ✅ Conclusion
-**CampusXchange** demonstrates how professional software architecture principles like **SOLID** and **Layered Design** can be applied to a real-world project. The key takeaway was that investing time in a robust **Service Layer** makes the application significantly easier to debug, extend, and scale.
+## 🚀 Installation & Setup
+
+Follow these steps to get the project running locally:
+
+### 1. Prerequisites
+- Node.js (v18 or higher)
+- MongoDB Atlas account
+- Cloudinary & Razorpay accounts
+
+### 2. Clone the Project
+```bash
+git clone https://github.com/BineetKeshari2005/CampusXchange_SD.git
+cd CampusXchange_SD
+```
+
+### 3. Backend Configuration
+1. Navigate to `/backend` and install dependencies:
+   ```bash
+   npm install
+   ```
+2. Create a `.env` file and add:
+   ```env
+   MONGO_URI=your_mongodb_uri
+   JWT_SECRET=your_secret_key
+   CLOUDINARY_CLOUD_NAME=your_name
+   CLOUDINARY_API_KEY=your_key
+   CLOUDINARY_API_SECRET=your_secret
+   RAZORPAY_KEY_ID=your_key_id
+   RAZORPAY_KEY_SECRET=your_key_secret
+   ```
+3. Start the server:
+   ```bash
+   npm run dev
+   ```
+
+### 4. Frontend Configuration
+1. Navigate to `/frontend` and install dependencies:
+   ```bash
+   npm install
+   ```
+2. Create a `.env.local` file and add:
+   ```env
+   NEXT_PUBLIC_API_URL=http://localhost:8080
+   NEXT_PUBLIC_RAZORPAY_KEY_ID=your_key_id
+   ```
+3. Start the application:
+   ```bash
+   npm run dev
+   ```
 
 ---
+
+## 💡 Usage
+
+1. **Register/Login**: Create a student account using your university credentials.
+2. **Browse Listings**: Use the home feed to find items or search for specific keywords.
+3. **List an Item**: Click on "Sell" to upload photos and details of your product.
+4. **Chat & Buy**: Message the seller directly to negotiate. Once agreed, proceed to secure checkout.
+5. **Manage**: Use your dashboard to track your active listings and purchase history.
+
+---
+
+## 📂 Folder Structure
+
+```text
+CampusXchange_SD/
+├── backend/
+│   ├── src/
+│   │   ├── services/    # 🧠 Core Business Logic (Critical Layer)
+│   │   ├── controllers/ # ⚡ API Request Handlers
+│   │   ├── models/      # 📂 Database Schemas
+│   │   └── middleware/  # 🛡️ Auth & Validation Logic
+├── frontend/
+│   ├── src/
+│   │   ├── components/  # 🧩 Reusable UI Elements
+│   │   ├── app/         # 📁 Next.js Pages & Routing
+│   │   └── services/    # 📞 API Client Logic
+└── diagrams/           # 🖼️ System Design Assets
+```
+
+---
+
+## 🔮 Future Improvements
+
+- **AI-Powered Recommendations**: Personalizing the feed based on user browsing history.
+- **Multi-Campus Support**: Expanding the platform to support multiple universities with location-based filtering.
+- **Escrow Payment System**: Holding payments until the buyer confirms physical receipt of the item.
+- **In-App Notifications**: Push notifications for chat messages and order updates.
+
+---
+
+<p align="center">Made with ❤️ for the Campus Community</p>
