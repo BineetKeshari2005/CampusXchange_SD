@@ -45,7 +45,8 @@ export default function Signup() {
       }
 
       // ✅ Signup success
-      localStorage.setItem("token", data.token);
+      localStorage.setItem("token", data.accessToken);
+      localStorage.setItem("user", JSON.stringify(data.user));
       alert("Signup successful! Redirecting to home...");
       router.push("/home");
     } catch (error) {
